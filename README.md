@@ -19,7 +19,7 @@ Please also have a look to the [List of excluded services](https://github.com/25
 
 - [Static app hosting](#static-app-hosting)
     - [**Firebase hosting**](#firebase-hosting)
-    - [**GitHub Pages**](#github-pages)
+    - [**Github Pages**](#github-pages)
     - [**GitLab Pages**](#gitlab-pages)
     - [**netlify**](#netlify)
     - [**surge**](#surge)
@@ -69,6 +69,8 @@ Please also have a look to the [List of excluded services](https://github.com/25
 - [Emailing](#emailing)
     - [**Mailgun**](#mailgun)
     - [SparkPost](#sparkpost)
+- [Business Intelligence and general analytics](#general-analytics)
+    - [**Metabase**](#metabase)
 - [Mobile analytics](#mobile-analytics)
     - [**Amazon Mobile Analytics**](#amazon-mobile-analytics)
     - [**Countly Analytics**](#countly-analytics)
@@ -80,9 +82,6 @@ Please also have a look to the [List of excluded services](https://github.com/25
     - [**Sauce Labs**](#sauce-labs)
 - [Realtime Infrastructure](#realtime-infrastructure)
     - [**Pusher**](#pusher)
-- [Logging](#logging)
-    - [**Logentries**](#logentries)
-    - [**Loggly**](#loggly)
 - [Misc](#misc)
     - [**Cloudinary**](#cloudinary)
     - [**Let's encrypt**](#lets-encrypt)
@@ -98,13 +97,13 @@ Please also have a look to the [List of excluded services](https://github.com/25
 * *Free tier*: 1GB storage, 10GB/month transfer, custom domain and SSL
 * *Pros*: includes CDN, auto provisioned SSL, deployment versioning, custom domain, URL rewriting (useful for HTML5 history API), possibility to define headers
 
-### **GitHub Pages**
+### **Github Pages**
 
 [Product page](https://pages.github.com/) / [More info](https://help.github.com/articles/what-is-github-pages/)
 
 * *Free tier*: 1GB storage, 100GB bandwidth or 100K requests/month, 10 builds per hour
 * *Pros*: deploy by pushing on a repository branch (`gh-pages`), provide automatic page generator, support HTTPS (on github.io), supports custom domains
-* *Limitations*: no HTTPS for custom domains (to solve this, use in combination with [Cloudflare](#cloudflare))
+* *Limitations*: no HTTPS for custom domains
 
 ### **GitLab Pages**
 
@@ -240,7 +239,7 @@ Please also have a look to the [List of excluded services](https://github.com/25
 
 [Pricing page](https://mlab.com/plans/pricing/)
 
-* *Free tier*: 500MB storage, daily backup,
+* *Free tier*: 500MB storage, daily backup, 
 * *Pros*: managed on AWS, Azure or Google Cloud, data browser, monitoring
 
 ### **Redis Cloud**
@@ -310,7 +309,7 @@ Please also have a look to the [List of excluded services](https://github.com/25
 
 [Home page](https://drone.io)
 * *Free tier*: unlimited public projects and unlimited builds
-* *Pros*: Integrates with multiple providers and their services (AWS, Heroku, Google AppEngine, etc.), supports VCS (GitHub, Bitbucket), uses Docker, supports multiple languages (Go, Python, JavaScript...) and environments including Chrome and Firefox for browser testing (Selenium, PhantomJS...)
+* *Pros*: Integrates with multiple providers and their services (AWS, Heroku, Google AppEngine, etc.), supports VCS (Github, Bitbucket), uses Docker, supports multiple languages (Go, Python, JavaScript...) and environments including Chrome and Firefox for browser testing (Selenium, PhantomJS...)
 * *Limitations*: free tier is limited to open source projects
 
 ### **GitLab CI**
@@ -333,7 +332,7 @@ Please also have a look to the [List of excluded services](https://github.com/25
 [Home page](https://app.shippable.com/)
 
 * *Free tier*: unlimited projects from either public or private repos, unlimited builds for open source repositories, 150 builds/month for private repositories, one concurrent job
-* *Pros*: integrates with GitHub or Bitbucket, uses Docker buildpacks, custom images, YAML file config, build badges, integrates with a lot of services, including various AWS services, Slack, GitLab, IRC, Jenkins and JFrog Artifactory
+* *Pros*: integrates with Github or Bitbucket, uses Docker buildpacks, custom images, YAML file config, build badges, integrates with a lot of services, including various AWS services, Slack, GitLab, IRC, Jenkins and JFrog Artifactory
 
 ### **TeamCity**
 
@@ -374,14 +373,15 @@ Please also have a look to the [List of excluded services](https://github.com/25
 [Pricing page](https://firebase.google.com/pricing/)
 
 * *Free tier*: always free, unlimited users
-* *Pros*: offers multiple login providers for free (anonymous, email, Google, Facebook, Twitter, GitHub), provide welcome emails triggers, integrates well with Firebase database security rules, libraries for multiple platform, UI available for [Android](https://github.com/firebase/firebaseui-android), [iOS](https://github.com/firebase/firebaseui-ios) and [web](https://github.com/firebase/firebaseui-web).
+* *Pros*: offers multiple login providers for free (anonymous, email, Google, Facebook, Twitter, Github), provide welcome emails triggers, integrates well with Firebase database security rules, libraries for multiple platform
+* *Limitations*: no UI provided
 
 ### **Ionic Auth**
 
 [Pricing page](http://ionic.io/pricing)
 
 * *Free tier*: always free, unlimited users
-* *Pros*: offers multiple login providers (email, custom with in-app browser, Google, Facebook, Twitter, GitHub, Instagram, LinkedIn), provide forms
+* *Pros*: offers multiple login providers (email, custom with in-app browser, Google, Facebook, Twitter, Github, Instagram, LinkedIn), provide forms
 
 ### **Stormpath**
 
@@ -428,7 +428,7 @@ Please also have a look to the [List of excluded services](https://github.com/25
 [Pricing page](http://www.mailgun.com/pricing)
 
 * *Free tier*: 10,000 emails/month (can apparently be raised up to 30,000 emails/month permanently by signing up through [this page](http://www.mailgun.com/google))
-* *Pros*: great API, scheduling, SMTP or REST, logs and analytics,
+* *Pros*: great API, scheduling, SMTP or REST, logs and analytics, 
 
 ### SparkPost
 
@@ -437,6 +437,16 @@ Please also have a look to the [List of excluded services](https://github.com/25
 * *Free tier*: 100,000 emails/month
 * *Pros*: pre-built client libraries (Python, Php, Node.js...), SMTP or REST, real-time data with webhooks
 * *Exceeding the free tier*: sending stops, user must add a credit card
+
+## Business Intelligence and general analytics
+
+### **Metabase**
+
+[FREE](http://www.metabase.com/start)
+
+* *Requires Hosting*: But fits in the free tier of AWS + Heroku.
+* *Pros*: Allows you to run queries without knowing SQL, build dashboards, set up nightly email reports and ask questions from slack. Works with your application database or a dedicated data warehouse, and supports MySQL, PostgreSQL, Redshift, BigQuery and many others.
+* *Limitations*: No limitations on usage. Some limitations on embedding.
 
 ## Mobile analytics
 
@@ -450,7 +460,7 @@ Please also have a look to the [List of excluded services](https://github.com/25
 
 ### **Countly Analytics**
 
-[Product page](https://count.ly/product)
+[Product page](https://count.ly/product) 
 
 * *Free tier*: Countly Community Edition (for mobile, web and desktop analytics) is free to download and use.
 * *Pros*: Client and server side application are open source (AGPLv3). Installable on-premises, based on MongoDB and Node.js. Data can be exported in CSV, XLS format or can be read through API. More than 10 SDKs including Android, iOS, Windows Phone, MacOS and Windows. Plugin based infrastructure. Countly Community Edition also includes crash reporting and push notifications.
@@ -499,29 +509,12 @@ Please also have a look to the [List of excluded services](https://github.com/25
 * *Free tier*: Unlimited channels, 100 max connections, 200,000 messages a day, support
 * *Pros*: Send messages from your server and subscribe to them in real-time from any client (Android, iOS, JavaScript, etc.) at massive scale (Pub/Sub). Great documentation, intuitive client libraries, and a powerful dashboard for testing, debugging, and analytics. Libraries available for various languages.
 
-## Logging
-
-### **Logentries**
-
-[Pricing page](https://logentries.com/pricing/)
-
-* *Free tier*: Send up to 5GB/month, 7 day retention
-* *Pros*: Unlimited hosts & sources, basic analytic functions (LEQL), custom tagging, regex and pattern search, access to free community Packs, libraries available for various languages.
-* *Exceeding the free tier*: logs capture continues for at least 30 days without being billed, after 30 days overage fees may occur.
-
-### **Loggly**
-
-[Pricing page](https://www.loggly.com/plans-and-pricing/)
-
-* *Free tier*: Send up to 200MB/day, 7 day retention
-* *Pros*:  Centralized log management, automated log summaries, search & filters, simple scripts available to get you running in one copy & paste command.
 
 ## Misc
 
 ### **Cloudinary**
 
 [Pricing page](http://cloudinary.com/pricing)
-
 
 * *Free tier*: 75,000 total images or videos and 7,500 monthly transformations, 2GB storage, 5GB bandwidth/month
 * *Pros*: free tiers includes images and videos manipulations (resizing, effects, overlays, optimization), backup and revisions, supports PDF, sprites, animated GIFs, etc. Provide SDK in multiplae languages
